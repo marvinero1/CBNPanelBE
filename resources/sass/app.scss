@@ -16,3 +16,13 @@
 @import '../template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css';
 @import '../template/plugins/daterangepicker/daterangepicker.css';
 @import '../template/plugins/summernote/summernote-bs4.css';
+@import '../sass/select2/select2.min.css';
+@import '../sass/select2-bootstrap4-theme/select2-bootstrap4.min.css';
+
+@import 'font-awesome-4.7.0/css/font-awesome.css';
+@import 'font-awesome-4.7.0/css/font-awesome.min.css';
+
+.nav-color{
+    background: rgb(82,223,223);
+    background: linear-gradient(0deg, rgba(82,223,223,1) 0%, rgba(77,144,203,1) 94%);
+}

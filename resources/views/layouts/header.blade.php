@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand nav-color">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -122,7 +122,7 @@
 <!-- /.navbar -->
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4"><br>
+<aside class="main-sidebar sidebar-primary nav-color elevation-4"><br>
     <!-- Brand Logo -->
     <a href="/" class="pt-3">
         <img src="/images/system/0.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -139,7 +139,7 @@
                 <img src="/images/default-person.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block" style="color: white;">Alexander Pierce</a>
+                <a class="d-block" style="color: white;">{{ Auth::user()->name }}</a>
             </div>
         </div>
 
@@ -149,14 +149,13 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link letter" style="color: white;">
+                    <a href="/home" class="nav-link letter" style="color: white;">
                       <i class="nav-icon fas fa-tachometer-alt"></i>
-                        
                         <p>Inicio </p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
-                  <a href="/categoria" class="nav-link" style="color: white;">
+                  <a class="nav-link" style="color: white;">
                     <i class="nav-icon fas fa-cubes"></i>
                     <p>
                       Categorias
@@ -165,13 +164,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="/categoria" class="nav-link" style="color: white;">
+                      <a href="/categorias" class="nav-link" style="color: white;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Categoria</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="/sub-categoria" class="nav-link" style="color: white;">
+                      <a href="/sub-categorias" class="nav-link" style="color: white;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Sub-Categorias</p>
                       </a>
@@ -203,24 +202,68 @@
                 </ul>
               </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link" style="color: white;">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Layout Options
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            {{-- <li class="nav-item has-treeview">
+                <a href="#" class="nav-link" style="color: white;">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        Layout Options
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">6</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Top Navigation</p>
+                        </a>
+                    </li>
+                </ul>
+            </li> --}}
+
+            <li class="nav-item">
+                <a href="/plantas" class="nav-link letter" style="color: white;">
+                  <i class="nav-icon fas fa-industry"></i>
+                    <p>Planta</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/usuario" class="nav-link letter" style="color: white;">
+                  <i class="nav-icon fas fa-users"></i>
+                    <p>Usuarios</p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                <a class="nav-link" style="color: white;">
+                  <i class="nav-icon fas fa-user"></i>
+                    <p>
+                        Mi Perfil
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                      <a href="/profile" class="nav-link" style="color: white;">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Mi Perfil</p>
+                      </a>
+                  </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link letter" style="color: white;" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <i class="nav-icon fa fa-sign-out" aria-hidden="true"></i>
+                            {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+            
                 {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>

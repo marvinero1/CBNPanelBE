@@ -14,9 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('auth/login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth'] )->group(function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'UserController@index1')->name('profile');
+
+
+    Route::resource('categorias', 'CategoriaController');
+    Route::resource('sub-categorias', 'SubCategoriaController');
+    Route::resource('plantas', 'PlantaController');
+    Route::resource('itms', 'ItemController');
+    Route::resource('usuario', 'UserController');
+
+});
