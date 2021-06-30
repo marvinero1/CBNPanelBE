@@ -29,6 +29,7 @@ Route::middleware(['auth'] )->group(function () {
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sub-categorias', 'SubCategoriaController');
     Route::resource('plantas', 'PlantaController');
+    Route::resource('extintor', 'ExtinguidorController');
     Route::resource('itms', 'ItemController');
     Route::resource('usuario', 'UserController');
 

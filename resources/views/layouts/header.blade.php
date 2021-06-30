@@ -188,15 +188,15 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Item A</p>
+                        <a href="/extintor" class="nav-link" style="color: white;">
+                            <i class="fa fa-fire-extinguisher nav-icon" aria-hidden="true"></i>
+                            <p>Extintores</p>
                         </a>
                     </li>
                     <li class="nav-item">
                       <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Item B</p>
+                        <i class="fa fa-medkit nav-icon" aria-hidden="true"></i>
+                          <p>Botiquin</p>
                       </a>
                   </li>
                 </ul>

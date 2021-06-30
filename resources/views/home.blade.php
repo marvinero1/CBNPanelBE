@@ -72,17 +72,17 @@
 @endsection
 <style>
     .card.hovercard1 .cardheader1 {
-        background: url("/images/productoDefault.png");
+        background: url("/images/system/productoDefault.png");
         background-size: cover;
         height: 200px;
     }
     .card.hovercard2 .cardheader2 {
-        background: url("/images/novedades.png");
+        background: url("/images/system/items.png");
         background-size: cover;
         height: 200px;
     }
     .card.hovercard3 .cardheader3 {
-        background: url("/images/inscrip.jpg");
+        background: url("/images/system/Categorias.png");
         background-size: cover;
         height: 200px;
     }
