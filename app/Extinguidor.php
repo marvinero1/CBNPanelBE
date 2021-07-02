@@ -35,5 +35,17 @@ class Extinguidor extends Model
                             'percutado',
                             'acceso',
                             'observaciones',
+                            'user',
+                            'categorias_id',
+                            'planta_id',
+                            'user_id',
                         ];
+
+    public function categoria(){
+        return $this->hasOne(Categoria::class,'id','categorias_id');
+    }
+
+    public function planta(){
+        return $this->hasOne(Planta::class,'id','planta_id');
+    }
 }

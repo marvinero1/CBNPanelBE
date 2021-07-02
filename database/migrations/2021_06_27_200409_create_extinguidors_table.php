@@ -21,6 +21,7 @@ class CreateExtinguidorsTable extends Migration
             $table->double('peso', 8, 2)->required();
             $table->string('proveedor')->required();
             $table->string('imagen')->required();
+            $table->string('imagen_qr')->required();
             $table->string('area')->required();
             $table->string('ubicacion')->required();
             $table->date('fecha_recarga')->required();
@@ -33,9 +34,14 @@ class CreateExtinguidorsTable extends Migration
             $table->enum('percutado', ['true', 'false'])->nullable();;
             $table->enum('acceso', ['true', 'false'])->nullable();;
             $table->longText('observaciones')->nullable();
+            $table->string('user')->nullable();
 
             $table->unsignedBigInteger('planta_id')->unsigned();
             $table->foreign('planta_id')->references('id')->on('plantas')
+                ->onDelete('cascade');
+            
+            $table->unsignedBigInteger('categorias_id')->unsigned();
+            $table->foreign('categorias_id')->references('id')->on('categorias')
                 ->onDelete('cascade');
 
             $table->softDeletes();

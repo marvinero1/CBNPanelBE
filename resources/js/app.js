@@ -23,6 +23,9 @@ require('../template/dist/js/adminlte.js');
 require('../template/dist/js/pages/dashboard.js');
 require('../template/dist/js/demo.js');
 require('../js/select2/select2.full');
+require('../js/QR/qrcode.js');
+require('../js/QR/qrcode.min.js');
+require('../js/QR/script.js');
 
 window.Vue = require('vue');
 

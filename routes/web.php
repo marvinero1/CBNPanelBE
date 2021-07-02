@@ -24,7 +24,7 @@ Route::middleware(['auth'] )->group(function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/profile', 'UserController@index1')->name('profile');
-
+    Route::get('/generateQR/{id}', 'ExtinguidorController@generateQR')->name('generateQR');
 
     Route::resource('categorias', 'CategoriaController');
     Route::resource('sub-categorias', 'SubCategoriaController');
