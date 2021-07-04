@@ -30,17 +30,18 @@
                                     <div class="card-body">
                                         <div class="col-md">
                                            <i class="fa fa-qrcode" aria-hidden="true" style="font-size:2.5rem;"></i>
+                                           
                                            <div id="areaImprimir">
-                                              <h4><strong>Imagen QR</strong></h4>
+                                              <h4 class="text-center"><strong>Imagen QR</strong></h4>
+                                              <p class="text-center">{{ $extinguidor->codigo }}</p>
                                                 {{-- <img src="/{{$extinguidor->imagen_qr }}" class="img-thumbnail" alt="extinguidorQR" 
                                                 style="display: block;margin: 0 auto;width: 75%;"> --}}
                                             <div class="visible-print text-center" >
-                                                {!! QrCode::size(350)->margin(0)->errorCorrection('L')->generate($extinguidor); !!}
+                                                {!! QrCode::size(200)->margin(0)->errorCorrection('H')->generate($extinguidor->id.'/'.$extinguidor->codigo);
+                                                 !!}
                                                 {{-- <p>Escaneame para ver la URL.</p> --}}
                                             </div>  
-                                           </div>
-                                           
-                                            <hr>
+                                           </div><hr>
                                             <div class="col-md">
                                                 <h4><strong>Categoria</strong></h4>
                                                 <h5> {{ $extinguidor->categoria->nombre }}</h5>

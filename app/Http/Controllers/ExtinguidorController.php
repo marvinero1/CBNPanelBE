@@ -10,6 +10,7 @@ use DB;
 use Image;
 use Session;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ExtinguidorController extends Controller
@@ -114,18 +115,15 @@ class ExtinguidorController extends Controller
     }
 
     public function generateQR($id){
-
+        
         $extinguidor = Extinguidor::findOrFail($id);
         $json =  json_encode($extinguidor);
-
+        
         $qrjson = QrCode::generate($json);
 
         return view('extintor.show', compact('extinguidor','planta','categoria'));
         
         // return QrCode::generate('Make me into a QrCode!');
-
-        
-
     }
 
     /**
