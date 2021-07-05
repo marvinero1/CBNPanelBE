@@ -32,6 +32,12 @@ class ExtinguidorController extends Controller
     
     }
 
+    public function getExtinguidor(Request $request, $id){
+
+        $extinguidor = Extinguidor::findOrFail($id);
+
+        return response()->json($extinguidor, 200);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -122,7 +128,6 @@ class ExtinguidorController extends Controller
         $qrjson = QrCode::generate($json);
 
         return view('extintor.show', compact('extinguidor','planta','categoria'));
-        
         // return QrCode::generate('Make me into a QrCode!');
     }
 
