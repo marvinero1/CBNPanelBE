@@ -34,9 +34,15 @@ class ExtinguidorController extends Controller
 
     public function getExtinguidor(Request $request, $id){
 
-        $extinguidor = Extinguidor::findOrFail($id);
+        // $extinguidor = Extinguidor::findOrFail($id);
 
-        return response()->json($extinguidor, 200);
+        // return response()->json($extinguidor, 200);
+        return Extinguidor::findOrFail($id);
+    }
+
+    public function getExtinguidorAll(){
+
+        return Extinguidor::latest()->get();
     }
     /**
      * Show the form for creating a new resource.

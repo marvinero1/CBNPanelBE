@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExtinguidorController;
-
+use App\Extinguidor;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,4 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/getExtinguidor/{id}',[ExtinguidorController::class, 'getExtinguidor']);
+
+Route::get('/getExtinguidorAll',[ExtinguidorController::class, 'getExtinguidorAll']);
 
