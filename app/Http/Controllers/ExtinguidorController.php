@@ -155,11 +155,19 @@ class ExtinguidorController extends Controller
      * @param  \App\Extinguidor  $extinguidor
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, Extinguidor $extinguidor)
     {
         //
     }
 
+    public function actualizarExtinguidor(Request $request, $id){
+
+        $extinguidor = Extinguidor::findOrFail($id);
+        $extinguidor->update($request->all());
+
+        return response()->json($extinguidor, 200);
+    }
     /**
      * Remove the specified resource from storage.
      *

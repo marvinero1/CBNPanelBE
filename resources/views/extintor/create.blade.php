@@ -147,7 +147,7 @@
                                                 <label class="custom-control-label" for="Estado1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Estado2" name="estado" value="false" class="custom-control-input">
+                                                <input type="radio" id="Estado2" name="estado" value="null" class="custom-control-input">
                                                 <label class="custom-control-label" for="Estado2">No</label>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                                 <label class="custom-control-label" for="Precinto1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Precinto2" name="precinto" value="false" class="custom-control-input">
+                                                <input type="radio" id="Precinto2" name="precinto" value="null" class="custom-control-input">
                                                 <label class="custom-control-label" for="Precinto2">No</label>
                                             </div>
                                         </div>
@@ -175,7 +175,7 @@
                                                 <label class="custom-control-label" for="Chaveta1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Chaveta2" name="chaveta" value="false" class="custom-control-input">
+                                                <input type="radio" id="Chaveta2" name="chaveta" value="null" class="custom-control-input">
                                                 <label class="custom-control-label" for="Chaveta2">No</label>
                                             </div>
                                         </div>
@@ -189,7 +189,7 @@
                                                 <label class="custom-control-label" for="Percutado1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Percutado2" name="percutado" value="false" class="custom-control-input">
+                                                <input type="radio" id="Percutado2" name="percutado" value="null" class="custom-control-input">
                                                 <label class="custom-control-label" for="Percutado2">No</label>
                                             </div>
                                         </div>
@@ -203,7 +203,7 @@
                                                 <label class="custom-control-label" for="Acceso1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Acceso2" name="acceso" value="false" class="custom-control-input">
+                                                <input type="radio" id="Acceso2" name="acceso" value="null" class="custom-control-input">
                                                 <label class="custom-control-label" for="Acceso2">No</label>
                                             </div>
                                         </div>

@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::put('actualizarExtinguidor/{id}', [ExtinguidorController::class,'actualizarExtinguidor']);  
 Route::get('/getExtinguidor/{id}',[ExtinguidorController::class, 'getExtinguidor']);
 
 Route::get('/getExtinguidorAll',[ExtinguidorController::class, 'getExtinguidorAll']);
