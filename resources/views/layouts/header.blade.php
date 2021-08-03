@@ -154,29 +154,32 @@
                         <p>Inicio </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                  <a class="nav-link" style="color: white;">
-                    <i class="nav-icon fas fa-cubes"></i>
-                    <p>
-                      Categorias
-                      <i class="right fas fa-angle-left"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="/categorias" class="nav-link" style="color: white;">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Categoria</p>
-                      </a>
+
+                @if(Auth::user()->role == 'admin')
+                    <li class="nav-item has-treeview">
+                        <a class="nav-link" style="color: white;">
+                            <i class="nav-icon fas fa-cubes"></i>
+                            <p>
+                            Categorias
+                            <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                            <a href="/categorias" class="nav-link" style="color: white;">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Categoria</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="/sub-categorias" class="nav-link" style="color: white;">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Sub-Categorias</p>
+                            </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                      <a href="/sub-categorias" class="nav-link" style="color: white;">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Sub-Categorias</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                @endif
 
                 <li class="nav-item has-treeview ">
                   <a href="#" class="nav-link" style="color: white;">
@@ -193,12 +196,12 @@
                             <p>Extintores</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                       <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
                         <i class="fa fa-medkit nav-icon" aria-hidden="true"></i>
                           <p>Botiquin</p>
                       </a>
-                  </li>
+                    </li> --}}
                 </ul>
               </li>
 
@@ -227,12 +230,30 @@
                     <p>Planta</p>
                 </a>
             </li>
+
             <li class="nav-item">
+                <a href="/home" class="nav-link letter" style="color: white;">
+                  <i class="nav-icon fas fa-file-text"></i>
+                    <p>Informes</p>
+                </a>
+            </li>
+
+            @if(Auth::user()->role == 'admin')
+                <li class="nav-item">
+                    <a href="/asignacion" class="nav-link letter" style="color: white;">
+                    <i class="nav-icon fas fa-hand-o-right"></i>
+                        <p>Asignación</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                 <a href="/usuario" class="nav-link letter" style="color: white;">
                   <i class="nav-icon fas fa-users"></i>
                     <p>Usuarios</p>
                 </a>
             </li>
+            @endif
+            
+            
 
             <li class="nav-item has-treeview ">
                 <a class="nav-link" style="color: white;">
@@ -251,6 +272,28 @@
                   </li>
               </ul>
             </li>
+
+            @if(Auth::user()->role == 'admin')
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link" style="color: white;">
+                  <i class="fa fa-pencil-square-o nav-icon"></i>
+                  <p>
+                    Registrar
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                 
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="/viewRegisUser" class="nav-link " style="color: white;">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Registro Personal CBN</p>
+                    </a>
+                  </li>
+                </ul>
+            </li>
+            @endif
+
 
             <li class="nav-item">
                 <a class="nav-link letter" style="color: white;" href="{{ route('logout') }}"

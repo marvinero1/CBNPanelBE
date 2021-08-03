@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use Session;
 
@@ -38,9 +39,28 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'apellido' => 'nullable', 
+            'carnet' => 'nullable',
+            'role' => 'required',
+            'email' => 'required',
+            'password' => 'required|string|min:6',
+        ]);
+      
+        User::create([
+            'name' => $request->name,
+            'apellido' => $request->apellido,
+            'carnet' => $request->carnet,
+            'email' => $request->email,
+            'role' => $request->role,
+            'password' => Hash::make($request->password),
+        ]);
+        
+        session::flash('message','Personal Registrado Exisitosamente!');
+        return redirect('/viewRegisUser')->with("message", "Personal creado exitosamente!"); 
     }
 
     /**
@@ -91,5 +111,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewRegisUser(){
+        return view('user.registerPersonal');
     }
 }

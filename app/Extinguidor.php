@@ -18,7 +18,7 @@ class Extinguidor extends Model
         'updated'
     ];
     
-    protected $fillable = [ 'nombre',
+    protected $fillable = [ 
                             'codigo',
                             'tipo',
                             'peso',
@@ -33,12 +33,13 @@ class Extinguidor extends Model
                             'precinto',
                             'chaveta',
                             'percutado',
+                            'presurizado',
                             'acceso',
                             'observaciones',
                             'user',
                             'categorias_id',
                             'planta_id',
-                            'user_id',
+                            // 'user_id',
                         ];
 
     public function categoria(){

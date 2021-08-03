@@ -37,7 +37,7 @@
                                                 {{-- <img src="/{{$extinguidor->imagen_qr }}" class="img-thumbnail" alt="extinguidorQR" 
                                                 style="display: block;margin: 0 auto;width: 75%;"> --}}
                                             <div class="visible-print text-center" >
-                                                {!! QrCode::size(200)->margin(0)->errorCorrection('H')->generate($extinguidor->id.'/'.$extinguidor->codigo);
+                                                {!! QrCode::size(200)->margin(0)->errorCorrection('H')->generate($extinguidor->id);
                                                  !!}
                                                 {{-- <p>Escaneame para ver la URL.</p> --}}
                                             </div>  

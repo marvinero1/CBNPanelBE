@@ -30,7 +30,11 @@ Route::middleware(['auth'] )->group(function () {
     Route::resource('sub-categorias', 'SubCategoriaController');
     Route::resource('plantas', 'PlantaController');
     Route::resource('extintor', 'ExtinguidorController');
+    Route::resource('asignacion', 'AsignacionController');
     Route::resource('itms', 'ItemController');
-    Route::resource('usuario', 'UserController');
+    Route::resource('user', 'UserController');
+
+
+    Route::get('viewRegisUser','UserController@viewRegisUser')->name('user.viewRegisUser'); 
 
 });

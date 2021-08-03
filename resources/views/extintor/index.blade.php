@@ -49,7 +49,7 @@
                     <tr>
                         {{-- <th>Id</th>  --}}
                         <th style="text-align:center;">Codigo</th>
-                        <th style="text-align:center;">Nombre</th>
+                        {{-- <th style="text-align:center;">Nombre</th> --}}
                         <th style="text-align:center;">Tipo</th>
                         <th style="text-align:center;">Peso</th>
                         <th style="text-align:center;">Proveedor</th>
@@ -60,7 +60,7 @@
                     @foreach($extinguidor as $extinguidors)
                     <tr>
                         <td style="text-align:center;">{{ $extinguidors->codigo }}</td>
-                        <td style="text-align:center;">{{ $extinguidors->nombre }}</td>
+                        {{-- <td style="text-align:center;">{{ $extinguidors->nombre }}</td> --}}
                         <td style="text-align:center;">{{ $extinguidors->tipo }}</td>
                         <td style="text-align:center;">{{ $extinguidors->peso }} Kg.</td>
                         <td style="text-align:center;">{{ $extinguidors->proveedor }}</td>

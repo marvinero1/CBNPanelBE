@@ -15,13 +15,12 @@ class CreateExtinguidorsTable extends Migration
     {
         Schema::create('extinguidors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre')->required();
             $table->string('codigo')->required();
             $table->enum('tipo', ['Polvo_Seco', 'CO2','Agua'])->required();
             $table->double('peso', 8, 2)->required();
+            $table->string('presurizado')->required();
             $table->string('proveedor')->required();
             $table->string('imagen')->required();
-            $table->string('imagen_qr')->required();
             $table->string('area')->required();
             $table->string('ubicacion')->required();
             $table->date('fecha_recarga')->required();

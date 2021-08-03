@@ -49,25 +49,31 @@
                                     &nbsp;&nbsp;&nbsp; <p> <strong>Los campos marcados con (*) son requeridos</strong> </p><br>
                                 </div><br>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="nombre">Nombre Cilindro *</label>
                                             <input type="text" class="form-control" name="nombre"
                                                 placeholder="Nombre Cilindro" required>
                                         </div>
-                                    </div>
+                                    </div> --}}
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Area *</label>
+                                            <input type="text" class="form-control" placeholder="Area" name="area" required>
+                                        </div>
+                                    </div> 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Peso *</label>
-                                            <input type="number" step="0.01" class="form-control" placeholder="Peso en Kg." name="peso" required>
+                                            <input type="number" step="0.01" class="form-control select2"
+                                             placeholder="Peso en Kg." name="peso" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                        <div class="form-group">                   
                                             <label>Tipo *</label>
                                             <div class="select2-blue">
-                                                 <select class="select2" data-dropdown-css-class="select2-blue"
-                                                    data-placeholder="Seleccione Tipo" style="width: 100%;"
+                                                 <select class="form-control  select2" data-placeholder="Seleccione Tipo" style="width: 100%;"
                                                     name="tipo"> 
                                                     <option value="Polvo_Seco">Polvo Seco</option>
                                                     <option value="CO2">CO2</option>                                         
@@ -109,12 +115,7 @@
                                             <input type="text" class="form-control" placeholder="Ubicación" name="ubicacion" required> 
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Area *</label>
-                                            <input type="text" class="form-control" placeholder="Area" name="area" required>
-                                        </div>
-                                    </div>  
+                                     
 
 
                                     <div class="col-md-6">
@@ -134,21 +135,22 @@
 
 
                                 <hr style="border-top: 1px solid dark;"><br>
-                                <div class="row" style="text-align: center;padding-left: 5px;"> 
-
-                                    <div class="col-md-2">
+                                <div class="col-md-2" style="text-align: center;">
                                         <i class="fa fa-fire-extinguisher" aria-hidden="true" style="font-size: 4.5rem;"></i>
                                     </div>
+                                <div class="row" style="text-align: center;padding-left: 5px;"> 
+
+                                    
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <div class="text-center"><strong>Estado</strong></div>
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="Estado1" name="estado" value="true" class="custom-control-input">
-                                                <label class="custom-control-label" for="Estado1">Si</label>
+                                                <label class="custom-control-label" for="Estado1">Bueno</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Estado2" name="estado" value="null" class="custom-control-input">
-                                                <label class="custom-control-label" for="Estado2">No</label>
+                                                <input type="radio" id="Estado2" name="estado" value="false" class="custom-control-input">
+                                                <label class="custom-control-label" for="Estado2">Malo</label>
                                             </div>
                                         </div>
                                     </div> 
@@ -158,11 +160,11 @@
                                             <div class="text-center"><strong>Precinto</strong></div>
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="Precinto1" name="precinto" value="true" class="custom-control-input">
-                                                <label class="custom-control-label" for="Precinto1">Si</label>
+                                                <label class="custom-control-label" for="Precinto1">Tiene</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Precinto2" name="precinto" value="null" class="custom-control-input">
-                                                <label class="custom-control-label" for="Precinto2">No</label>
+                                                <input type="radio" id="Precinto2" name="precinto" value="false" class="custom-control-input">
+                                                <label class="custom-control-label" for="Precinto2">No Tiene</label>
                                             </div>
                                         </div>
                                     </div> 
@@ -175,7 +177,7 @@
                                                 <label class="custom-control-label" for="Chaveta1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Chaveta2" name="chaveta" value="null" class="custom-control-input">
+                                                <input type="radio" id="Chaveta2" name="chaveta" value="false" class="custom-control-input">
                                                 <label class="custom-control-label" for="Chaveta2">No</label>
                                             </div>
                                         </div>
@@ -189,8 +191,22 @@
                                                 <label class="custom-control-label" for="Percutado1">Si</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Percutado2" name="percutado" value="null" class="custom-control-input">
+                                                <input type="radio" id="Percutado2" name="percutado" value="false" class="custom-control-input">
                                                 <label class="custom-control-label" for="Percutado2">No</label>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <div class="text-center"><strong>Presurizado</strong></div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="presurizado1" name="presurizado" value="true" class="custom-control-input">
+                                                <label class="custom-control-label" for="presurizado1">Si</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="presurizado2" name="presurizado" value="false" class="custom-control-input">
+                                                <label class="custom-control-label" for="presurizado2">No</label>
                                             </div>
                                         </div>
                                     </div> 
@@ -200,11 +216,11 @@
                                             <div class="text-center"><strong>Acceso</strong></div>
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="Acceso1" name="acceso" value="true" class="custom-control-input">
-                                                <label class="custom-control-label" for="Acceso1">Si</label>
+                                                <label class="custom-control-label" for="Acceso1">Libre</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="Acceso2" name="acceso" value="null" class="custom-control-input">
-                                                <label class="custom-control-label" for="Acceso2">No</label>
+                                                <input type="radio" id="Acceso2" name="acceso" value="false" class="custom-control-input">
+                                                <label class="custom-control-label" for="Acceso2">Restringido</label>
                                             </div>
                                         </div>
                                     </div> 
@@ -228,8 +244,8 @@
                                     </div>
                                 </div>
                                 
-                                    <input hidden type="text" value="{{Auth::user()->id}}" name="user_id">
-                                    <input hidden type="text" value="{{Auth::user()->name}}" name="user">
+                                    {{-- <input hidden type="text" value="{{Auth::user()->id}}" name="user_id">
+                                    <input hidden type="text" value="{{Auth::user()->name}}" name="user"> --}}
 
                                 </div>
                            

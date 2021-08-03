@@ -17,9 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('apellido');
-            $table->string('cargo');
             $table->string('imagen');
             $table->string('carnet');
+            $table->enum('role', ['user','supervisor','admin_planta','admin'])->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
