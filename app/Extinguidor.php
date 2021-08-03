@@ -30,6 +30,7 @@ class Extinguidor extends Model
                             'fecha_prox_recarga',
 
                             'estado',
+                            'condicion',
                             'precinto',
                             'chaveta',
                             'percutado',
