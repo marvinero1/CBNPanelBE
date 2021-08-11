@@ -32,9 +32,10 @@ Route::middleware(['auth'] )->group(function () {
     Route::resource('extintor', 'ExtinguidorController');
     Route::resource('asignacion', 'AsignacionController');
     Route::resource('itms', 'ItemController');
+    Route::resource('asignacionTrabajador', 'AsignacionTrabajadorController');
+    Route::resource('informe', 'InformeController');
     Route::resource('user', 'UserController');
-
-
+    
     Route::get('viewRegisUser','UserController@viewRegisUser')->name('user.viewRegisUser'); 
 
 });

@@ -126,7 +126,7 @@
     <!-- Brand Logo -->
     <a href="/" class="pt-3">
         <img src="/images/system/0.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="display: block;opacity: .8;width: 64%;margin: auto;">
+            style="display: block;opacity: .8;width: 40%;margin: auto;">
 
         {{-- <span class="brand-text font-weight-light"></span> --}}
     </a>
@@ -182,28 +182,28 @@
                 @endif
 
                 <li class="nav-item has-treeview ">
-                  <a href="#" class="nav-link" style="color: white;">
+                    <a href="#" class="nav-link" style="color: white;">
                     <i class="nav-icon fas fa-th"></i>
-                      <p>
+                        <p>
                           Items
                           <i class="right fas fa-angle-left"></i>
-                      </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="/extintor" class="nav-link" style="color: white;">
-                            <i class="fa fa-fire-extinguisher nav-icon" aria-hidden="true"></i>
-                            <p>Extintores</p>
-                        </a>
-                    </li>
-                    {{-- <li class="nav-item">
-                      <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
-                        <i class="fa fa-medkit nav-icon" aria-hidden="true"></i>
-                          <p>Botiquin</p>
-                      </a>
-                    </li> --}}
-                </ul>
-              </li>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/extintor" class="nav-link" style="color: white;">
+                                <i class="fa fa-fire-extinguisher nav-icon" aria-hidden="true"></i>
+                                <p>Extintores</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                          <a href="pages/layout/top-nav.html" class="nav-link" style="color: white;">
+                            <i class="fa fa-medkit nav-icon" aria-hidden="true"></i>
+                              <p>Botiquin</p>
+                          </a>
+                        </li> --}}
+                    </ul>
+                </li>
 
             {{-- <li class="nav-item has-treeview">
                 <a href="#" class="nav-link" style="color: white;">
@@ -232,25 +232,46 @@
             </li>
 
             <li class="nav-item">
-                <a href="/home" class="nav-link letter" style="color: white;">
+                <a href="/informe" class="nav-link letter" style="color: white;">
                   <i class="nav-icon fas fa-file-text"></i>
                     <p>Informes</p>
                 </a>
             </li>
 
             @if(Auth::user()->role == 'admin')
-                <li class="nav-item">
-                    <a href="/asignacion" class="nav-link letter" style="color: white;">
+
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link" style="color: white;">
                     <i class="nav-icon fas fa-hand-o-right"></i>
-                        <p>Asignación</p>
+                        <p>
+                          Asignación
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/asignacion" class="nav-link" style="color: white;">
+                                <i class="fa fa-hand-o-right nav-icon" aria-hidden="true"></i>
+                                <p>Asignación Encargado Planta</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="/asignacionTrabajador" class="nav-link" style="color: white;">
+                            <i class="fa fa-hand-o-right nav-icon" aria-hidden="true"></i>
+                              <p>Asignación a Trabajadores</p>
+                          </a>
+                        </li> 
+                    </ul>
+                </li>
+           
+
+
+                <li class="nav-item">
+                    <a href="/usuario" class="nav-link letter" style="color: white;">
+                      <i class="nav-icon fas fa-users"></i>
+                        <p>Usuarios</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                <a href="/usuario" class="nav-link letter" style="color: white;">
-                  <i class="nav-icon fas fa-users"></i>
-                    <p>Usuarios</p>
-                </a>
-            </li>
             @endif
             
             

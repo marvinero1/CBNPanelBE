@@ -17,12 +17,20 @@ require('../template/plugins/jqvmap/maps/jquery.vmap.usa.js');
 require('../template/plugins/jquery-knob/jquery.knob.min.js');
 //require('../template/plugins/daterangepicker/daterangepicker.js');
 //require('../template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js');
+
 require('../template/plugins/summernote/summernote-bs4.min.js');
 require('../template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js');
 require('../template/dist/js/adminlte.js');
 require('../template/dist/js/pages/dashboard.js');
 require('../template/dist/js/demo.js');
+
+
+require('../template/plugins/select2/js/select2.full.min.js');
 require('../js/select2/select2.full');
+require('../template/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js');
+require('../template/plugins/bootstrap-switch/js/bootstrap-switch.min.js');
+require('../template/plugins/inputmask/min/jquery.inputmask.bundle.min.js');
+
 require('../js/QR/qrcode.js');
 require('../js/QR/qrcode.min.js');
 require('../js/QR/script.js');
@@ -59,5 +67,5 @@ $(function () {
     //Initialize Select2 Elements
     $('.select2bs4').select2({
       theme: 'bootstrap4'
-    })
+    });
 });

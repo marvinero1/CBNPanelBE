@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAsignacionsTable extends Migration
+class CreateAsignacionTrabajadorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateAsignacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('asignacions', function (Blueprint $table) {
+        Schema::create('asignacion_trabajadors', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('planta_id')->unsigned();
-            $table->foreign('planta_id')->references('id')->on('plantas')
-            ->onDelete('cascade');
-        
-            $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->unsignedBigInteger('asignacion_id')->unsigned();
+            $table->foreign('asignacion_id')->references('id')->on('asignacions')
             ->onDelete('cascade');
 
             $table->softDeletes();
@@ -36,6 +32,6 @@ class CreateAsignacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asignacions');
+        Schema::dropIfExists('asignacion_trabajadors');
     }
 }

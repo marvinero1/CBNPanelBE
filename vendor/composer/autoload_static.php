@@ -517,10 +517,13 @@ class ComposerStaticInitcd3a7dd37d0ff8a5545cd9e9890a15bf
     );
 
     public static $classMap = array (
+        'App\\AsignacionTrabajador' => __DIR__ . '/../..' . '/app/AsignacionTrabajador.php',
         'App\\Categoria' => __DIR__ . '/../..' . '/app/Categoria.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Extinguidor' => __DIR__ . '/../..' . '/app/Extinguidor.php',
+        'App\\Http\\Controllers\\AsignacionController' => __DIR__ . '/../..' . '/app/Http/Controllers/AsignacionController.php',
+        'App\\Http\\Controllers\\AsignacionTrabajadorController' => __DIR__ . '/../..' . '/app/Http/Controllers/AsignacionTrabajadorController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -544,6 +547,7 @@ class ComposerStaticInitcd3a7dd37d0ff8a5545cd9e9890a15bf
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Informe' => __DIR__ . '/../..' . '/app/Informe.php',
         'App\\Item' => __DIR__ . '/../..' . '/app/Item.php',
         'App\\Planta' => __DIR__ . '/../..' . '/app/Planta.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

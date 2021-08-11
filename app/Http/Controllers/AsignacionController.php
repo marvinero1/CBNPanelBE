@@ -16,15 +16,19 @@ class AsignacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index(Request $request){
 
        
-        $user = User::all();
-        $planta = Planta::all();
+        $user = User::all()->sortBy('name');
+        $planta = Planta::all()->sortBy('nombre');
         
-        $asignacion = asignacion::all();
+       
+        $role = $request->get('buscarpor');
+        $asignacion = asignacion::where('role','like',"%$role%")
+        ->latest()->paginate(10);
+       
 
-         return view('asignacion.index', compact('user','planta', 'asignacion'));
+        return view('asignacion.index', compact('user','planta','asignacion'));
     }
 
     /**
@@ -45,16 +49,18 @@ class AsignacionController extends Controller
      */
     public function store(Request $request){
 
-        // dd($request);
+         // dd($request);
 
         $request->validate([
-            'plantas_id' => 'required',
-            'users_id' => 'required',
+            'planta_id' => 'required',
+            'user_id' => 'required',
+            'role' => 'nullable',
         ]);
         
         asignacion::create([
-            'plantas_id' => $request->plantas_id,
-            'users_id' => $request->users_id,
+            'planta_id' => $request->planta_id,
+            'user_id' => $request->user_id,
+            'role' => $request->role,
         ]);
         
         Session::flash('message','Asignacion creada exisitosamente!');
@@ -101,8 +107,13 @@ class AsignacionController extends Controller
      * @param  \App\asignacion  $asignacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(asignacion $asignacion)
-    {
-        //
+    public function destroy($id){
+
+        $asignacion = asignacion::findOrFail($id);
+
+        $asignacion->delete();
+
+        Session::flash('message','Asignacion eliminado exitosamente!');
+        return redirect()->route('asignacion.index');
     }
 }
