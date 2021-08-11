@@ -24,8 +24,7 @@ class AsignacionTrabajador extends Model
                         'trabajador'
                     ];
 
-    public function user()
-    {
+    public function user(){
         return $this->hasOne(User::class,'id', 'user_id');
     }
 

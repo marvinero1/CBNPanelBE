@@ -183,4 +183,13 @@ class ExtinguidorController extends Controller
         Session::flash('message','Extinguidor eliminado exitosamente!');
         return redirect()->route('extintor.index'); 
     }
+
+    public function download(Request $request, $file){
+
+        $file = $request->file;
+
+        $path = storage_path("app/public/files/". $file);
+
+        return response()->download($path);
+    }
 }

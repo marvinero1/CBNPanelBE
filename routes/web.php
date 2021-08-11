@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+Route::get('downloads/{file}','ExtinguidorController@download')->name('downloads');
 Route::middleware(['auth'] )->group(function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
@@ -37,5 +37,8 @@ Route::middleware(['auth'] )->group(function () {
     Route::resource('user', 'UserController');
     
     Route::get('viewRegisUser','UserController@viewRegisUser')->name('user.viewRegisUser'); 
+
+
+    Route::get('/ReportePDF-Extinguidores/{id}', 'PDFController@PDFExtinguidor')->name('ReporteExtinguidor');
 
 });

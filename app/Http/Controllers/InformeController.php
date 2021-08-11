@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Informe;
+use App\Planta;
 use App\asignacion;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,9 +20,12 @@ class InformeController extends Controller
     public function index(){
 
         $id = Auth::id();
+        $planta = Planta::all();
+
         $asignacion = asignacion::where('user_id',  $id)->get();
+        $informe = Informe::where('user_id',  $id)->get();
         
-        return view('informe.index', compact('asignacion'));
+        return view('informe.index', compact('asignacion','planta','informe'));
     }
 
     /**
@@ -39,9 +44,24 @@ class InformeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+        $requestData = $request->all();
+
+
+        if($request->hasFile('file')) {
+            $file = $request->file('file');
+            $requestData['file'] = auth()->id() .'_'. time() .'_'. $request->file('file')->getClientOriginalName();
+            $request->file('file')->storeAs('files', $requestData['file']);
+        }
+
+        Informe::create($requestData);
+
+        $mensaje= 'Informe Guardado Exitosamente';
+
+        Session::flash('message',$mensaje);
+
+        return back()->withInput();
     }
 
     /**
