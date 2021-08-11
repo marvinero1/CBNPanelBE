@@ -6,12 +6,26 @@ use App\Informe;
 use App\Planta;
 use App\asignacion;
 use Session;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
 class InformeController extends Controller
-{
+{   
+
+    public function getInforme(){
+        // colocar el id del usuario logueado
+
+        // $carrito = Carrito::where('estado','false')
+        // ->where('carritos.user_id', '=', $id)
+        // ->first();
+        $planta = Planta::all();    
+        $informe = Informe::all();
+        $user = User::all();
+
+        return response()->json($informe, 200);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +37,7 @@ class InformeController extends Controller
         $planta = Planta::all();
 
         $asignacion = asignacion::where('user_id',  $id)->get();
-        $informe = Informe::where('user_id',  $id)->get();
+        $informe = Informe::where('user_id',  $id)->paginate(10);
         
         return view('informe.index', compact('asignacion','planta','informe'));
     }
@@ -47,7 +61,6 @@ class InformeController extends Controller
     public function store(Request $request){
 
         $requestData = $request->all();
-
 
         if($request->hasFile('file')) {
             $file = $request->file('file');

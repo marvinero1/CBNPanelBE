@@ -80,7 +80,7 @@
                       </div>
                 </div>
               </div>
-        </div>
+        </div><br><br>
         {{-- TABLA --}}
         <div>
             <div class="card-header border-0">
@@ -99,13 +99,11 @@
                     <thead>
                         <tr>
                             {{-- <th>Id</th>  --}}
-                            {{-- <th style="text-align:center;">Id</th> --}}
                             <th class="text-center">Planta</th>
                             <th class="text-center">Ubicacion Planta</th>
                             <th class="text-center">Descripcion</th>
                             <th class="text-center">Fecha de Creacion Informe</th>
                             <th class="text-center">Acciones </th>
-                            
                         </tr>
                     </thead>
                     <tbody>
@@ -114,11 +112,8 @@
                             <td style="text-align:center;">{{ $informes->planta->nombre }}</td> 
                             <td style="text-align:center;">{{ $informes->planta->ubicacion }}</td> 
                             <td style="text-align:center;">{{ $informes->descripcion }}</td>
-
-                            <td style="text-align:center;">{{ $informes->created_at }}</td>
-                                                  
-                             
-
+                            <td style="text-align:center;">{{ $informes->created_at->format('d, F-Y') }}</td>
+                    
                             <td style="text-align:center;">
                                 <a href="{{ route('downloads', $informes->file ) }}" class="btn btn-success">
                                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Descargar PDF
@@ -127,18 +122,17 @@
                                     accept-charset="UTF-8" style="display:inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Image"
+                                    <button type="submit" class="btn btn-danger btn-md" title="Delete Image"
                                         onclick="return confirm(&quot;¿Desea eliminar?&quot;)"><i class="fa fas fa-trash"
                                             aria-hidden="true"></i> Eliminar</button>
                                 </form>
                             </td>                     
-                          
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-           
+            {{ $informe->links() }}
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExtinguidorController;
+use App\Http\Controllers\InformeController;
 use App\Extinguidor;
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,4 @@ Route::put('actualizarExtinguidor/{id}', [ExtinguidorController::class,'actualiz
 Route::get('/getExtinguidor/{id}',[ExtinguidorController::class, 'getExtinguidor']);
 
 Route::get('/getExtinguidorAll',[ExtinguidorController::class, 'getExtinguidorAll']);
-
+Route::get('/getInforme',[InformeController::class, 'getInforme']);
