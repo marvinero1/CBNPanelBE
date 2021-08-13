@@ -20,6 +20,7 @@ class InformeController extends Controller
         // $carrito = Carrito::where('estado','false')
         // ->where('carritos.user_id', '=', $id)
         // ->first();
+        
         $planta = Planta::all();    
         $informe = Informe::all();
         $user = User::all();
