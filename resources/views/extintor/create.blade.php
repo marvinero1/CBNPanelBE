@@ -58,10 +58,11 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Area *</label>
-                                            <input type="text" class="form-control" placeholder="Area" name="area" required>
+                                            <label>Proveedor *</label>
+                                            <input type="text" class="form-control" placeholder="Proveedor" name="proveedor" required>
                                         </div>
-                                    </div> 
+                                    </div>
+
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Peso *</label>
@@ -70,20 +71,20 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                       <div class="form-group">                   
+                                       <div class="form-group">
                                             <label>Tipo *</label>
                                             <div class="select2-blue">
                                                  <select class="form-control  select2" data-placeholder="Seleccione Tipo" style="width: 100%;"
-                                                    name="tipo"> 
+                                                    name="tipo">
                                                     <option value="Polvo_Seco">Polvo Seco</option>
-                                                    <option value="CO2">CO2</option>                                         
-                                                    <option value="Agua">Agua</option>                          
+                                                    <option value="CO2">CO2</option>
+                                                    <option value="Agua">Agua</option>
                                                 </select>
-                                            </div> 
-                                        </div> 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">                          
+                                <div class="row">
                                     <!-- <div class="col-md-4 text-center">
                                         <label class="text-center">Estado</label><br>
                                         <div class="form-check form-check-inline">
@@ -104,27 +105,23 @@
                                     </div> -->
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Proveedor *</label>
-                                            <input type="text" class="form-control" placeholder="Proveedor" name="proveedor" required>
-                                        </div>
-                                    </div>  
-                                      
-                                    <div class="col-md-4">
-                                        <div class="form-group">
                                             <label>Ubicación *</label>
-                                            <input type="text" class="form-control" placeholder="Ubicación" name="ubicacion" required> 
+                                            <input type="text" class="form-control" placeholder="Ubicación" name="ubicacion" required>
                                         </div>
                                     </div>
-                                     
-
-
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Area *</label>
+                                            <input type="text" class="form-control" placeholder="Area" name="area" required>
+                                        </div>
+                                    </div> 
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Feha de Recarga *</label>
                                             <input type="date" class="form-control" placeholder="Feha de Recarga" name="fecha_recarga" required>
                                         </div>
-                                    </div>  
-                                      
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Fecha Proxima Recarga *</label>
@@ -138,9 +135,9 @@
                                 <div class="col-md-2" style="text-align: center;">
                                         <i class="fa fa-fire-extinguisher" aria-hidden="true" style="font-size: 4.5rem;"></i>
                                     </div>
-                                <div class="row" style="text-align: center;padding-left: 5px;"> 
+                                <div class="row" style="text-align: center;padding-left: 5px;">
 
-                                    
+
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <div class="text-center"><strong>Estado</strong></div>
@@ -153,8 +150,8 @@
                                                 <label class="custom-control-label" for="Estado2">Malo</label>
                                             </div>
                                         </div>
-                                    </div> 
-                                    
+                                    </div>
+
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <div class="text-center"><strong>Precinto</strong></div>
@@ -167,7 +164,7 @@
                                                 <label class="custom-control-label" for="Precinto2">No Tiene</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="col-md-2">
                                         <div class="form-group">
@@ -181,7 +178,7 @@
                                                 <label class="custom-control-label" for="Chaveta2">No</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="col-md-2">
                                         <div class="form-group">
@@ -195,7 +192,7 @@
                                                 <label class="custom-control-label" for="Percutado2">No</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="col-md-2">
                                         <div class="form-group">
@@ -209,7 +206,7 @@
                                                 <label class="custom-control-label" for="presurizado2">No</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <div class="col-md-2">
                                         <div class="form-group">
@@ -223,7 +220,7 @@
                                                 <label class="custom-control-label" for="Acceso2">Restringido</label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -243,19 +240,19 @@
                                             </div>
                                     </div>
                                 </div>
-                                
+
                                     {{-- <input hidden type="text" value="{{Auth::user()->id}}" name="user_id">
                                     <input hidden type="text" value="{{Auth::user()->name}}" name="user"> --}}
 
                                 </div>
-                           
-  
+
+
                                 <div class="card-footer">
                                     <a type="button" class="btn btn-secondary float-right"
                                         href="{{url('/extintor')}}">Cerrar</a>
                                     <button type="submit" class="btn btn-primary float-right mr-2"><i class="fa fas fa-save"></i> Guardar</button>
                                 </div>
-                            </div>          
+                            </div>
                         </form>
                     </div>
                 </div>

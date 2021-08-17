@@ -8,25 +8,22 @@
                 <div class="card__body">
                     <div class="half container-fluid">
                         <div class="row">
-                            <div class="featured_text" style="padding-right: 700px;">
-                                <h2>{{ $extinguidor->nombre }}</h2><br>
-                            </div>
-                            <div class="featured_text float-right">
+                          
+                            <div class="featured_text float-left col-md-10" >
                                 <h2>Cod. Extinguidor</h2>
                                 <h3>{{ $extinguidor->codigo }}</h3><br>
                             </div>  
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="image">
+                            <div class="col-md-2">
+                                <div class="image" style="padding-bottom: 15px;">
                                     <img src="/{{$extinguidor->imagen }}" class="img-thumbnail" alt="extinguidor" 
-                                        style="display: block;margin: 0 auto;width: 100%;">
+                                        style="display: block;margin: 0 auto;width: 75%;">
                                 </div>
                             </div>
-                            
-                            <div class="row" style="text-align: center;padding-left: 8px;">
-                                <div class="card">
+                        </div>
+                        
+                        <div>
+                            <div class="row" style="text-align: center;">
+                                <div class="card col-md-6">
                                     <div class="card-body">
                                         <div class="col-md">
                                            <i class="fa fa-qrcode" aria-hidden="true" style="font-size:2.5rem;"></i>
@@ -36,7 +33,7 @@
                                               <p class="text-center">{{ $extinguidor->codigo }}</p>
                                                 {{-- <img src="/{{$extinguidor->imagen_qr }}" class="img-thumbnail" alt="extinguidorQR" 
                                                 style="display: block;margin: 0 auto;width: 75%;"> --}}
-                                            <div class="visible-print text-center" >
+                                            <div class="visible-print text-center" id="capture">
                                                 {!! QrCode::size(200)->margin(0)->errorCorrection('H')->generate($extinguidor->id);
                                                  !!}
                                                 {{-- <p>Escaneame para ver la URL.</p> --}}
@@ -63,10 +60,10 @@
                                         </div>
                                     </div>
                                 </div>
-                               
-                                <div class="card">
+                              
+                                <div class="card col-md-6">
                                     <div class="card-body">
-                                        <i class="fa fa-industry" aria-hidden="true" style="font-size:2.5rem;"></i>
+                                        <i class="fa fa-industry" aria-hidden="true" style="font-size:2.5rem;padding-bottom: 10px;"></i>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-md">
@@ -131,7 +128,7 @@
                                                     </div><hr>
         
                                                     <div class="col-md">
-                                                        <h4><strong>Percutado</strong></h4>
+                                                        <h4><strong>Operable</strong></h4>
                                                         @if($extinguidor->estado == 'false')
                                                         <h5>No</h5> 
                                                     @else
@@ -154,12 +151,9 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-9">
-                                <div class="row" style="width: 230px;">
-                                    <div class="reviews">
-                                      
-                                    </div>
-                                </div>
+                               
                             <div class="half">
                                 <div class="description" style="width: 280px;">
                                     <h3><strong>Observaciones</strong></h3>
@@ -169,8 +163,12 @@
                             <a type="button" class="btn btn-secondary"
                                 href="{{url('/extintor')}}">Atras</a>
                                 
-                            <button type="button" class="btn btn-success" onclick="printDiv('areaImprimir')" value="imprimir div">
+                            <a type="button" class="btn btn-primary" onclick="doCapture('capture')" value="descargar div" style="color: white;">
+                                <i class="fa fa-download" aria-hidden="true"></i> Descargar</a>
+                                
+                            <button type="button" class="btn btn-success" onclick="printDiv('areaImprimir')" value="imprimir div" >
                                 <i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
+
                         </div>
                     </div>
                 </div>
@@ -185,6 +183,15 @@
         var contenidoOriginal = document.body.innerHTML;
         document.body.innerHTML = contenido;
         window.print();
+        document.body.innerHTML = contenidoOriginal;
+    }
+
+    function doCapture(nombreDiv) {
+
+        var contenido = document.getElementById(nombreDiv).innerHTML;
+        var contenidoOriginal = document.body.innerHTML;
+        document.body.innerHTML = contenido;
+        window.opener(contenido, '_blank');
         document.body.innerHTML = contenidoOriginal;
     }
 </script>

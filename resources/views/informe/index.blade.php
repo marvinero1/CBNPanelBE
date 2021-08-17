@@ -118,7 +118,7 @@
                                 <a href="{{ route('downloads', $informes->file ) }}" class="btn btn-success">
                                     <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Descargar PDF
                                 </a>
-                                <form action="{{ route('asignacion.destroy',$informes->id ) }}" method="POST"
+                                <form action="{{ route('informe.destroy',$informes->id ) }}" method="POST"
                                     accept-charset="UTF-8" style="display:inline">
                                     @csrf
                                     @method('DELETE')

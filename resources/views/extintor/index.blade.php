@@ -48,22 +48,28 @@
                 <thead>
                     <tr>
                         {{-- <th>Id</th>  --}}
-                        <th style="text-align:center;">Codigo</th>
-                        {{-- <th style="text-align:center;">Nombre</th> --}}
-                        <th style="text-align:center;">Tipo</th>
-                        <th style="text-align:center;">Peso</th>
-                        <th style="text-align:center;">Proveedor</th>
-                        <th style="text-align:center;">Acciones</th>
+                        <th class="text-center">Codigo</th>
+                        {{-- <th class="text-center">Nombre</th> --}}
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Peso</th>
+                        <th class="text-center">Area</th>
+                        <th class="text-center">Proveedor</th>
+                        <th class="text-center">Fecha Recarga</th>
+                        <th class="text-center">Fecha Proxima Recarga</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($extinguidor as $extinguidors)
                     <tr>
-                        <td style="text-align:center;">{{ $extinguidors->codigo }}</td>
-                        {{-- <td style="text-align:center;">{{ $extinguidors->nombre }}</td> --}}
-                        <td style="text-align:center;">{{ $extinguidors->tipo }}</td>
-                        <td style="text-align:center;">{{ $extinguidors->peso }} Kg.</td>
-                        <td style="text-align:center;">{{ $extinguidors->proveedor }}</td>
+                        <td class="text-center">{{ $extinguidors->codigo }}</td>
+                        {{-- <td class="text-center">{{ $extinguidors->nombre }}</td> --}}
+                        <td class="text-center">{{ $extinguidors->tipo }}</td>
+                        <td class="text-center">{{ $extinguidors->peso }} Kg.</td>
+                        <td class="text-center">{{ $extinguidors->area }}</td>
+                        <td class="text-center">{{ $extinguidors->proveedor }}</td>
+                        <td class="text-center">{{ date('d-M-y', strtotime($extinguidors->fecha_recarga)) }}</td>
+                        <td class="text-center">{{ date('d-M-y', strtotime($extinguidors->fecha_prox_recarga)) }}</td>
                         <td style="text-align: center;">
                             <div class="card-body">
                                 {{-- <a class="btn btn-app" data-toggle="modal"

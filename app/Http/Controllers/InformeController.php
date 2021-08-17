@@ -118,8 +118,13 @@ class InformeController extends Controller
      * @param  \App\Informe  $informe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Informe $informe)
-    {
-        //
+    public function destroy($id){
+
+        $informe = Informe::find($id);
+
+        $informe->delete();
+
+        Session::flash('message','Informe Eliminado Exitosamente!!!');
+        return redirect()->route('informe.index');
     }
 }

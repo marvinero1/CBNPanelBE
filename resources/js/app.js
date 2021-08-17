@@ -34,7 +34,7 @@ require('../template/plugins/inputmask/min/jquery.inputmask.bundle.min.js');
 require('../js/QR/qrcode.js');
 require('../js/QR/qrcode.min.js');
 require('../js/QR/script.js');
-
+require('../js/download/html2canvas.js');
 window.Vue = require('vue');
 
 /**
