@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img class="img" src="{{url('/images/system/qr_cbn.jpg')}}" alt="Logo">
+                <img class="img" src="{{url('/images/system/qr_cbn.png')}}" alt="Logo">
             </div>
             <div class="col-md-8">
                 <h1 class="font">Bienvenido
