@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Auth;
 use Session;
@@ -18,9 +20,9 @@ class UserController extends Controller
     public function index(Request $request){
 
         $name = $request->get('buscarpor');
-        
+
         $user = User::where('name','like',"%$name%")->latest()->paginate(10);
-        
+
         return view('user.index', compact('user'));
     }
 
@@ -34,6 +36,37 @@ class UserController extends Controller
         //
     }
 
+    public function login(Request $request){
+
+        $this->validate($request, [
+            'email' => 'required|email|exists:users,email',
+            // 'username' => 'required|exists:users,username',
+            'password' => 'required'
+        ]);
+        $user = User::whereEmail($request->email)->first();
+
+        $sub =$user->subscripcion;
+
+        if (!is_null($user)){
+           if(Hash::check($request->password, $user->password)){
+            $token = $user->createToken('personal')->accessToken;
+
+            return response()->json(['res' => true, 'token' => $token, 'message' => "Bienvenido al sistema"]);
+          }else{
+              return response()->json(['res' => false, 'message' => "Emai o Contraseña Incorrecta"]);
+          }
+        }
+
+      }
+
+      public function logout(){
+        $user = auth()->user();
+        $user->tokens->each(function ($token, $key){
+            $token->delete();
+        });
+        return response()->json(['res' => true, 'message' => "Adios"]);
+      }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,13 +77,13 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'apellido' => 'nullable', 
+            'apellido' => 'nullable',
             'carnet' => 'nullable',
             'role' => 'required',
             'email' => 'required',
             'password' => 'required|string|min:6',
         ]);
-      
+
         User::create([
             'name' => $request->name,
             'apellido' => $request->apellido,
@@ -59,9 +92,9 @@ class UserController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
-        
+
         session::flash('message','Personal Registrado Exisitosamente!');
-        return redirect('/viewRegisUser')->with("message", "Personal creado exitosamente!"); 
+        return redirect('/viewRegisUser')->with("message", "Personal creado exitosamente!");
     }
 
     /**

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5cd6f58cb141bbba95c1212d2762885f72b3819c',
+        'reference' => '6c53cac5efb01476de2f9fcc4ddae27805197f27',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -57,6 +57,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'defuse/php-encryption' => array(
+            'pretty_version' => 'v2.3.1',
+            'version' => '2.3.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../defuse/php-encryption',
+            'aliases' => array(),
+            'reference' => '77880488b9954b7884c25555c2a0ea9e7053f9d2',
+            'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
             'pretty_version' => '2.0.3',
@@ -165,6 +174,15 @@
             'aliases' => array(),
             'reference' => '2edbc73a4687d9085c8f20f398eebade844e8424',
             'dev_requirement' => true,
+        ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v5.4.0',
+            'version' => '5.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'reference' => 'd2113d9b2e0e349796e72d2a63cf9319100382d2',
+            'dev_requirement' => false,
         ),
         'fruitcake/laravel-cors' => array(
             'pretty_version' => 'v2.0.4',
@@ -400,6 +418,24 @@
                 0 => '*',
             ),
         ),
+        'laminas/laminas-diactoros' => array(
+            'pretty_version' => '2.4.1',
+            'version' => '2.4.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-diactoros',
+            'aliases' => array(),
+            'reference' => '36ef09b73e884135d2059cc498c938e90821bb57',
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-zendframework-bridge' => array(
+            'pretty_version' => '1.1.1',
+            'version' => '1.1.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-zendframework-bridge',
+            'aliases' => array(),
+            'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
+            'dev_requirement' => false,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v7.30.4',
             'version' => '7.30.4.0',
@@ -415,7 +451,16 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5cd6f58cb141bbba95c1212d2762885f72b3819c',
+            'reference' => '6c53cac5efb01476de2f9fcc4ddae27805197f27',
+            'dev_requirement' => false,
+        ),
+        'laravel/passport' => array(
+            'pretty_version' => 'v9.4.0',
+            'version' => '9.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/passport',
+            'aliases' => array(),
+            'reference' => '011bd500e8ae3d459b692467880a49ff1ecd60c0',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -445,6 +490,15 @@
             'reference' => '2224e3db7ec399952523b0769a7677de0b6afd8b',
             'dev_requirement' => false,
         ),
+        'lcobucci/jwt' => array(
+            'pretty_version' => '3.4.5',
+            'version' => '3.4.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lcobucci/jwt',
+            'aliases' => array(),
+            'reference' => '511629a54465e89a31d3d7e4cf0935feab8b14c1',
+            'dev_requirement' => false,
+        ),
         'league/commonmark' => array(
             'pretty_version' => '1.6.5',
             'version' => '1.6.5.0',
@@ -452,6 +506,15 @@
             'install_path' => __DIR__ . '/../league/commonmark',
             'aliases' => array(),
             'reference' => '44ffd8d3c4a9133e4bd0548622b09c55af39db5f',
+            'dev_requirement' => false,
+        ),
+        'league/event' => array(
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/event',
+            'aliases' => array(),
+            'reference' => 'd2cc124cf9a3fab2bb4ff963307f60361ce4d119',
             'dev_requirement' => false,
         ),
         'league/flysystem' => array(
@@ -471,6 +534,27 @@
             'aliases' => array(),
             'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
             'dev_requirement' => false,
+        ),
+        'league/oauth2-server' => array(
+            'pretty_version' => '8.3.2',
+            'version' => '8.3.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth2-server',
+            'aliases' => array(),
+            'reference' => '0809487d33dd8a2c8c8c04e4a599ba4aadba1ae6',
+            'dev_requirement' => false,
+        ),
+        'league/oauth2server' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'lncd/oauth2' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'mockery/mockery' => array(
             'pretty_version' => '1.3.4',
@@ -529,6 +613,15 @@
             'reference' => '7c125dc2463f3e144ddc7e05e63077109508c94e',
             'dev_requirement' => true,
         ),
+        'nyholm/psr7' => array(
+            'pretty_version' => '1.4.1',
+            'version' => '1.4.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nyholm/psr7',
+            'aliases' => array(),
+            'reference' => '2212385b47153ea71b1c1b1374f8cb5e4f7892ec',
+            'dev_requirement' => false,
+        ),
         'opis/closure' => array(
             'pretty_version' => '3.6.2',
             'version' => '3.6.2.0',
@@ -536,6 +629,15 @@
             'install_path' => __DIR__ . '/../opis/closure',
             'aliases' => array(),
             'reference' => '06e2ebd25f2869e54a306dda991f7db58066f7f6',
+            'dev_requirement' => false,
+        ),
+        'paragonie/random_compat' => array(
+            'pretty_version' => 'v9.99.100',
+            'version' => '9.99.100.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/random_compat',
+            'aliases' => array(),
+            'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
@@ -574,6 +676,15 @@
             'reference' => '5fa61b65e612ce1ae15f69b3d223cb14ecc60e32',
             'dev_requirement' => false,
         ),
+        'php-http/message-factory' => array(
+            'pretty_version' => 'v1.0.2',
+            'version' => '1.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-http/message-factory',
+            'aliases' => array(),
+            'reference' => 'a478cb11f66a6ac48d8954216cfed9aa06a501a1',
+            'dev_requirement' => false,
+        ),
         'phpdocumentor/reflection-common' => array(
             'pretty_version' => '2.2.0',
             'version' => '2.2.0.0',
@@ -608,6 +719,15 @@
             'install_path' => __DIR__ . '/../phpoption/phpoption',
             'aliases' => array(),
             'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
+            'dev_requirement' => false,
+        ),
+        'phpseclib/phpseclib' => array(
+            'pretty_version' => '2.0.33',
+            'version' => '2.0.33.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpseclib/phpseclib',
+            'aliases' => array(),
+            'reference' => 'fb53b7889497ec7c1362c94e61d8127ac67ea094',
             'dev_requirement' => false,
         ),
         'phpspec/prophecy' => array(
@@ -713,6 +833,21 @@
             'dev_requirement' => false,
         ),
         'psr/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/http-factory' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => array(),
+            'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
                 0 => '1.0',
@@ -1139,6 +1274,15 @@
             'reference' => '714b47f9196de61a196d86c4bad5f09201b307df',
             'dev_requirement' => false,
         ),
+        'symfony/psr-http-message-bridge' => array(
+            'pretty_version' => 'v2.1.1',
+            'version' => '2.1.1.0',
+            'type' => 'symfony-bridge',
+            'install_path' => __DIR__ . '/../symfony/psr-http-message-bridge',
+            'aliases' => array(),
+            'reference' => 'c9012994c4b4fb23e7c57dd86b763a417a04feba',
+            'dev_requirement' => false,
+        ),
         'symfony/routing' => array(
             'pretty_version' => 'v5.3.0',
             'version' => '5.3.0.0',
@@ -1243,6 +1387,12 @@
             'aliases' => array(),
             'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
             'dev_requirement' => true,
+        ),
+        'zendframework/zend-diactoros' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '^2.2.1',
+            ),
         ),
     ),
 );
