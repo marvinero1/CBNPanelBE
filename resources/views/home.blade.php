@@ -5,67 +5,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img class="img" src="{{url('/images/system/qr.png')}}" alt="Logo">
+                <img class="img" src="{{url('/images/system/qr_cbn.jpg')}}" alt="Logo">
             </div>
             <div class="col-md-8">
                 <h1 class="font">Bienvenido
                     <hr> CBN QR </h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card hovercard2">
-                    <div class="cardheader2">
-                    </div>
-                    <div class="info">
-                        <div class="title">
-                            <h2 target="_blank">Plantas</h2>
-                        </div>
-                    </div>
-                    <div class="bottom" style="text-align: center;">
-                        <button style="height: 65px;" class="btn "><a
-                                style="color: whitesmoke;font-size: 17px;" href="{{url('/novedad')}}"><i
-                                    class="fa fa-bar-chart"></i>
-                                <span><br> Plantas</span></a></button>
-                    </div><br>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card hovercard1">
-                    <div class="cardheader1">
-                    </div>
-                    <div class="info">
-                        <div class="title">
-                            <h2 target="_blank">Items</h2>
-                        </div>
-                    </div>
-                    <div class="bottom" style="text-align: center;">
-                        <button style="height: 65px;" class="btn"><a
-                                style="color: whitesmoke;font-size: 17px;" href="{{url('/productos')}}"><i
-                                    class="fa fa-cog"></i>
-                                <span><br> Items</span></a>
-                        </button>
-                    </div><br>
-                </div>                 
-            </div>           
-            <div class="col-md-4">               
-                <div class="card hovercard3">
-                    <div class="cardheader3">
-                    </div>
-                    <div class="info">
-                        <div class="title">
-                            <h2 target="_blank">Categorias</h2>
-                        </div>
-                    </div>
-                    <div class="bottom" style="text-align: center;">
-                        <button style="height: 65px;" class="btn"><a
-                                style="color: whitesmoke;font-size: 17px;" href="{{url('/pedido')}}">
-                                <i class="fa fa-hand-o-right"></i>
-                                <span><br> Categorias</span></a>
-                        </button>
-                    </div><br>
-                </div>
-            </div>    
         </div>
     </div>
 </div>
